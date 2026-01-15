@@ -1,0 +1,16 @@
+[
+  {
+    "id": "waspwatch-001",
+    "agent_type": "green",
+    "asr_intermediate": 0.12,
+    "asr_end_to_end": 0.05,
+    "utility": 0.94
+  },
+  {
+    "id": "waspwatch-002",
+    "agent_type": "green", 
+    "asr_intermediate": 0.15,
+    "asr_end_to_end": 0.08,
+    "utility": 0.92
+  }
+]

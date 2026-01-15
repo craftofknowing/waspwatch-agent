@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Attack Success Rate",
+    "query": "SELECT avg(asr_intermediate) as asr FROM results WHERE agent_type='green' ORDER BY asr DESC"
+  },
+  {
+    "name": "End-to-End Compromise",
+    "query": "SELECT avg(asr_end_to_end) as asr FROM results ORDER BY asr DESC"
+  },
+  {
+    "name": "Utility Score",
+    "query": "SELECT avg(utility) as util FROM results ORDER BY util DESC"
+  },
+  {
+    "name": "Overall WaspWatch",
+    "query": "SELECT (asr_intermediate + asr_end_to_end + utility)/3 as score FROM results ORDER BY score DESC"
+  }
+]
