@@ -8,4 +8,4 @@ python-dotenv==1.0.1
 transformers==4.45.0
 torch==2.3.1
 # WASP / VWA bring their own pinned deps via setup.sh [web:37]
-
+playwright==1.47.0  # Add this line

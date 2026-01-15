@@ -1,9 +1,18 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
 
-# Optional: log configuration
-echo "Starting WASP detector green agent..."
+echo "Starting WaspWatch green agent..."
 
-# Start FastAPI controller
-uvicorn app.main:app --host 0.0.0.0 --port 8000
+# Set PYTHONPATH IMMEDIATELY (before any Python)
+export PYTHONPATH=/app:/app/app:"${PYTHONPATH:-}"
+
+# Pre-verify imports
+python -c "
+import sys; sys.path.extend(['\$PYTHONPATH'.split(':')]);
+from orchestrator import RealOrchestrator;
+print('✅ Orchestrator pre-loaded')
+" || { echo "❌ Orchestrator import failed"; exit 1; }
+
+cd /app
+exec uvicorn app.main:app --host 0.0.0.0 --port 8000 --log-level info
 
