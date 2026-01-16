@@ -1,6 +1,4 @@
 # WaspWatch 🐝
-[
-[
 
 **Production WASP benchmark Green Agent for AgentBeats competition.** Evaluates web agents against prompt injection attacks using official Meta FAIR WASP benchmark.
 
