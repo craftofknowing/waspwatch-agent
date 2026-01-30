@@ -15,7 +15,7 @@
 
 ```bash
 # Run
-podman run -d -p 8000:8000 ghcr.io/craftofknowing/waspwatch:v1.0.6
+podman run -d -p 8000:8000 ghcr.io/craftofknowing/waspwatch:latest
 
 # Health check
 curl http://localhost:8000/health
@@ -29,7 +29,7 @@ curl -X POST http://localhost:8000/assess \
 ## AgentBeats Registration
 
 ```
-Image: ghcr.io/craftofknowing/waspwatch:v1.0.6
+Image: ghcr.io/craftofknowing/waspwatch:latest
 Health: /health
 Assess: /assess
 Metrics: asr_intermediate,asr_end_to_end,utility
@@ -77,7 +77,7 @@ curl -X POST http://localhost:8000/webhook \
 **GHCR:** [ghcr.io/craftofknowing/waspwatch](https://github.com/craftofknowing/waspwatch-agent/pkgs/container/waspwatch)
 
 ```bash
-podman run -d --gpus all -p 8000:8000 ghcr.io/craftofknowing/waspwatch:v1.0.6
+podman run -d --gpus all -p 8000:8000 ghcr.io/craftofknowing/waspwatch:latest
 ```
 
 ## Webhook Integration
